@@ -19,6 +19,12 @@ def countries(request):
     # render()第三個參數，把資料傳給 Templates
     return render(request, "home/countries.html", {"countries": countries})
 
+def about(request, year=None):
+    return render(request, "home/about.html")
+
+
+
+
 def person(request):
     return render(request, "home/person.html")
 

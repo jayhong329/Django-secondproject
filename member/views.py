@@ -26,6 +26,10 @@ def index(request):
     if name != None :
         name = "Django"
     html = f'<h2>Hello {name} </h2>'
+    
+    #
+    # respose['']
+
     return HttpResponse(html)
 
 def register(request):
