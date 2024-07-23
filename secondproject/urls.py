@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),  #http://127.0.0.1:8000/
     path('', include('member.urls')),  #http://127.0.0.1:8000/member/
+    path('store', include('myapp.urls')),
     # path('member/', include('member.urls')),  #http://127.0.0.1:8000/member/
 
     path('member/', membviews.register),  #http://127.0.0.1:8000/member/
