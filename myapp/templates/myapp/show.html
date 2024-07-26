@@ -1,0 +1,28 @@
+{%  extends 'base.html'%}
+
+{% block styles %}
+<style>
+    h2{color: blueviolet;}
+</style>
+{% endblock %}
+
+
+{% block title %}
+<h2>SHOW SHOW</h2>
+{% endblock %}
+
+{% block content %}
+<p>這是來自show的 templates的內容</p>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const theP = document.querySelector('p')
+    theP.addEventListener('mouseover', () =>{
+        theP.style.backgroundColor = 'pink'
+    })
+    theP.addEventListener('mouseout', () =>{
+        theP.style.backgroundColor = 'lightgreen'
+    })
+</script>
+{% endblock %}

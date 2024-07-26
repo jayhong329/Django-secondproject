@@ -29,3 +29,6 @@ def about(request, year= datetime.now().year):
 # publisg => 2024/07/23
 def blog(request, publish = None):
     return HttpResponse(f'<h2>讀取 {publish} 的文章 </h2>')
+
+def show(request):
+    return render(request, 'myapp/show.html')

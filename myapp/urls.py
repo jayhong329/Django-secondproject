@@ -7,5 +7,6 @@ urlpatterns = [
     path('details/<uuid:product_id>', views.details),
     path('about/', views.about),  #http://127.0.0.1:8000/store/about/
     path('about/<int:year>', views.about),
-    path('blog/<path:publish>', views.blog), 
+    path('blog/<path:publish>', views.blog),
+    path ('show', views.show)
 ]

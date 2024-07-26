@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+    {% block styles %}
+    {% endblock %}
 </head>
 <body>
     <div>
       {% include 'navbar.html' %}
     </div>
     <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        {% block title%}
+        <p>MY TITLE</p>
+        {% endblock %}
         <div class="card-body">
           {% block content %}
           <p>這段會被換掉~</p>
@@ -20,5 +24,7 @@
         </div>
       </div>
       <script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
 </body>
 </html>
