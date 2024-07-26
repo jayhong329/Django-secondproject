@@ -11,4 +11,9 @@
 <p>{{ now }}</p>
 <p>{{ now |  date:"Y/m/d" }}</p>
 <p>{{ now |  time:"H:i:s A" }}</p>
+<p>{{ name| default:'GUEST' }}</p>
+
+<div>
+    {{ value1 | unordered_list }}
+</div>
 {% endblock %}

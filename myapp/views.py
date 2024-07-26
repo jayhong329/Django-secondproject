@@ -7,6 +7,7 @@ def index(request):
     title = '我的商店 首頁'
     now = datetime.now()
     id = '123e4567-e89b-12d3-a456-426655440000'
+    value1 = ['aaa',['bbb',['eee','fff'],'ccc']]
 
     return render(request, 'myapp/index.html', locals())
 
