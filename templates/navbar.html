@@ -6,9 +6,10 @@
           </a>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link active" aria-current="page" href="/store/">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'myapp:index' %}">store</a>
+          <a class="nav-link" href="{% url 'myapp:about' %}">about</a>
+          <a class="nav-link" href="{% url 'myapp:show' %}">show</a>
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </div>
       </div>
