@@ -8,10 +8,11 @@ def index(request):
     now = datetime.now()
     id = '123e4567-e89b-12d3-a456-426655440000'
     value1 = ['aaa',['bbb',['eee','fff'],'ccc']]
-    value2 =[
-    {"name": "zed", "age": 19},
-    {"name": "amy", "age": 22},
-    {"name": "joe", "age": 31},
+    users =[
+    {"name": "zed", "email": "zed@gmail", "age": 19},
+    {"name": "amy", "email": "amy@gmail", "age": 22},
+    {"name": "joe", "email": "joe@gmail", "age": 31},
+    {"name": "Sam", "email": "sam@gmail", "age": 40},
     ]
 
     return render(request, 'myapp/index.html', locals())

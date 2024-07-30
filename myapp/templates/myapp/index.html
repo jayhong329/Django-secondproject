@@ -17,7 +17,36 @@
     {{ value1 | unordered_list }}
 </div>
 <div>
-    {{ value2 | dictsort:"age" }}
+    {{ users | dictsort:"age" }}
+
+    {% if users.age >= 30 %}
+    <p style="background-color: red;color:white">{{ users.name }}</p>
+    {% elif users.age >= 20 %}
+    <p style="background-color: blue;color:white">{{ users.name }}</p>
+    {% else %}
+    <p style="background-color: green;color:white">{{ users.name }}</p>
+    {% endif %}
+    <hr />
+    <table class="table table-bordere">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>電子郵件</th>
+                <th>年紀</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aUser in users|dictsort:'age' %}
+            <tr class="{% cycle 'table-success' 'table-warning'%}">
+                <td>{{ aUser.name }}</td>
+                <td>{{ aUser.email }}</td>
+                <td>{{ aUser.age }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
 </div>
 <img src="{% static 'images/paris.png' %}" width="50" height="50">
 {% endblock %}
