@@ -13,6 +13,12 @@
 
 {% block content %}
 <p>這是來自show的 templates的內容</p>
+<ul>
+    {% for category in categories %}
+    <li>{{ category.id }} - {{ category.name }}</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
 
 {% block scripts %}
