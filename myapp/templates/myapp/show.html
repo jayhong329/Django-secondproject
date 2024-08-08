@@ -1,34 +1,42 @@
-{%  extends 'base.html'%}
+{% extends  'base.html' %}
 
 {% block styles %}
 <style>
-    h2{color: blueviolet;}
+    h3{color: brown;}
+    p{background-color: salmon;}
 </style>
 {% endblock %}
 
 
 {% block title %}
-<h2>SHOW SHOW</h2>
+<h3>{{ title | title }}</h3>
 {% endblock %}
 
 {% block content %}
-<p>這是來自show的 templates的內容</p>
+<p>這是來自show templates的內容</p>
 <ul>
     {% for category in categories %}
     <li>{{ category.id }} - {{ category.name }}</li>
     {% endfor %}
 </ul>
+<p>
+    {{ categories_one.id }} - {{ categories_one.name }} 
+</p>
+<p>
+    {{ categories_insert.0 }} - {{ categories_insert.1 }} 
+</p>
+
 
 {% endblock %}
 
 {% block scripts %}
 <script>
-    const theP = document.querySelector('p')
-    theP.addEventListener('mouseover', () =>{
-        theP.style.backgroundColor = 'pink'
+    const theP = document.querySelector("p")
+    theP.addEventListener("mouseover",()=>{
+        theP.style.backgroundColor = "lightgreen"
     })
-    theP.addEventListener('mouseout', () =>{
-        theP.style.backgroundColor = 'lightgreen'
+    theP.addEventListener("mouseout",()=>{
+        theP.style.backgroundColor = "salmon"
     })
 </script>
 {% endblock %}

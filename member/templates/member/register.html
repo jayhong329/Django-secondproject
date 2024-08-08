@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="zn-hant-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <H1>member index</H1>
-    <div>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
+{% extends "base.html"%}
+
+{% block title %}
+<h2>會員註冊</h2>
+{% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
         <div>
             <input type="text" name="username" placeholder="請輸入姓名">
         </div>
@@ -17,8 +14,14 @@
             <input type="email" name="useremail" placeholder="請輸入電子郵件">
         </div>
         <div>
-            <input type="file" name="userphoto" />
+            <input type="password" name="userpassword" placeholder="請輸入密碼">
+        </div>
+        <div>
+            <input type="date" name="userbirth" placeholder="請輸入生日">
+        </div>
+        <div>
+            <input type="file" name="userphoto">
         </div>
         <button type="submit">註冊</button>
     </form>
-</body>
+{% endblock %}

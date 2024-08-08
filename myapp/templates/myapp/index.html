@@ -1,52 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block title %}
-<h2>{{ title }}</h2>
+<h2>{{ title | title }}</h2>
 {% endblock %}
 
-
 {% block content %}
-<h2>{{ title }}  {{ now }}</h2>
+<p>{{ now}}</p>
+<p>{{ now | date:"Y-m-d D"  }}</p>
+<p>{{ now | time:"H:i:s A"  }}</p>
+<p>{{ text | truncatechars:100 }}</p>
+<p>{{ text | wordwrap:50 }}</p>
+<p style="white-space: pre;">{{ text | wordwrap:50 }}</p>
 <p>{{ id }}</p>
-<p>{{ now }}</p>
-<p>{{ now |  date:"Y/m/d" }}</p>
-<p>{{ now |  time:"H:i:s A" }}</p>
-<p>{{ name| default:'GUEST' }}</p>
-
-<div>
-    {{ value1 | unordered_list }}
-</div>
-<div>
-    {{ users | dictsort:"age" }}
-
-    {% if users.age >= 30 %}
-    <p style="background-color: red;color:white">{{ users.name }}</p>
-    {% elif users.age >= 20 %}
-    <p style="background-color: blue;color:white">{{ users.name }}</p>
-    {% else %}
-    <p style="background-color: green;color:white">{{ users.name }}</p>
-    {% endif %}
-    <hr />
-    <table class="table table-bordere">
-        <thead>
-            <tr>
-                <th>姓名</th>
-                <th>電子郵件</th>
-                <th>年紀</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for aUser in users|dictsort:'age' %}
-            <tr class="{% cycle 'table-success' 'table-warning'%}">
-                <td>{{ aUser.name }}</td>
-                <td>{{ aUser.email }}</td>
-                <td>{{ aUser.age }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-
-</div>
-<img src="{% static 'images/paris.png' %}" width="50" height="50">
 {% endblock %}

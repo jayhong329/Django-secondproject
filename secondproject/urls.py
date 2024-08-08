@@ -16,15 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from home import views
-from member import views as membviews
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+# from home import views
+# from member import views as member_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),  #http://127.0.0.1:8000/
-    path('', include('member.urls')),  #http://127.0.0.1:8000/member/
-    path('store/', include('myapp.urls')),
-    # path('member/', include('member.urls')),  #http://127.0.0.1:8000/member/
-
-    path('member/', membviews.register),  #http://127.0.0.1:8000/member/
-    path('member/register', membviews.register),  #http://127.0.0.1:8000/member/register
+    path ('', include('home.urls')),  #載入 home 下面的 urls.py
+    #https://127.0.0.1:8000/member/
+    path ('member/', include('member.urls')),  #載入 member 下面的 urls.py
+    #https://127.0.0.1:8000/store/
+    path ('store/', include('myapp.urls')),  #載入 myapp 下面的 urls.py
 ]
+ 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

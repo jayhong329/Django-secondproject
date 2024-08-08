@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yz@p)$iw@kq$@xw=jp2@_l!q156(k$t@+753gp2+ow&mn%@y)n'
+SECRET_KEY = 'django-insecure-e#vd9rp_k&qs)+5r_@!6#72r&ztcvgnv#virdts5fn^on@9mo1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -50,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',  # 要在 template 用到 MEDIA_URL
 ]
 
 ROOT_URLCONF = 'secondproject.urls'
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -84,11 +86,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sakila',  # 這邊放專題名稱!!
+        'NAME': 'sakila',
         'USER': 'root',
-        'PASSWORD': 'P@ssw0rd', 
-        'HOST':'localhost', 
-        'PORT':3306 
+        'PASSWORD': 'P@ssw0rd',
+        'HOST': 'localhost',
+        'PORT': 3306
     }
 }
 
@@ -136,5 +138,6 @@ STATICFILES_DIRS = [BASE_DIR/'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 上傳檔案
-MEDIA_URL = "/uploads/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+# C:\Users\User\Desktop\Django\secondproject\uploads
+MEDIA_URL = '/media/'  #路徑名稱
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
