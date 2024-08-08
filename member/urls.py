@@ -9,5 +9,6 @@ urlpatterns = [
     path('formdemo/', views.formdemo, name="formdemo" ),   # http://127.0.0.1:8000/member/formdemo
     path('write/', views.write, name="write" ),   # http://127.0.0.1:8000/member/write
     path('read/', views.read, name="read" ),   # http://127.0.0.1:8000/member/read
+    path('login/', views.login, name="login" ),   # http://127.0.0.1:8000/member/login
 
 ]
